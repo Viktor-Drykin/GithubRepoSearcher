@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RepositoryServiceError: Error {
+enum RepositoryServiceError: Error, Comparable {
     case incorrectUserName
     case incorrectURL
     case invalidStatusCode
@@ -17,9 +17,10 @@ enum RepositoryServiceError: Error {
 
 class RepositoriesServiceImpl {
 
-    private let apiService: APIServicePerformable
     private let userNamePlaceholder = "#USER_NAME#"
     private let urlPath = "https://api.github.com/users/#USER_NAME#/repos"
+    private let apiService: APIServicePerformable
+
     init(apiService: APIServicePerformable) {
         self.apiService = apiService
     }
@@ -29,17 +30,12 @@ extension RepositoriesServiceImpl: RepositoriesService {
 
     func fetchRepos(with user: String) async throws -> [RepositoryDTO] {
 
-        guard let encodedUser = user.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else {
-            throw RepositoryServiceError.incorrectUserName
-        }
+        let urlRequest = URLRequest(userName: user, urlPath: urlPath, replacedPattern: userNamePlaceholder)
 
-        let replacedURLPath = urlPath.replacing(userNamePlaceholder, with: encodedUser, maxReplacements: 1)
-
-        guard let url = URL(string: replacedURLPath) else {
+        guard let request = urlRequest else {
             throw RepositoryServiceError.incorrectURL
         }
 
-        let request = URLRequest(url: url)
         do {
             let repositories: [RepositoryDTO] = try await apiService.perform(urlRequest: request)
             guard !repositories.isEmpty else {
@@ -51,5 +47,21 @@ extension RepositoriesServiceImpl: RepositoriesService {
         } catch NetworkError.invalidStatusCode {
             throw RepositoryServiceError.invalidStatusCode
         }
+    }
+}
+
+fileprivate extension URLRequest {
+    init?(userName: String, urlPath: String, replacedPattern: String) {
+        guard let encodedUser = userName.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed), !encodedUser.isEmpty else {
+            return nil
+        }
+
+        let replacedURLPath = urlPath.replacing(replacedPattern, with: encodedUser, maxReplacements: 1)
+
+        guard let url = URL(string: replacedURLPath) else {
+            return nil
+        }
+
+        self.init(url: url)
     }
 }
