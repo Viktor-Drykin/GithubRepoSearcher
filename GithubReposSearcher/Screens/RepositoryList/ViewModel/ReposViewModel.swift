@@ -8,13 +8,13 @@
 import Foundation
 
 final class RepositoryListViewModel {
-
+    
     enum State {
         case loading
         case loaded([Repository])
         case failed(message: String)
     }
-
+    
     enum Constant {
         static let noRepos = "There are no repositories"
         static let invalidStatusCodeError = "Error: invalidStatusCode"
@@ -22,15 +22,15 @@ final class RepositoryListViewModel {
         static let incorrectUserNameError = "Error: incorrectUserName"
         static let unknownError = "Error: something went wrong"
     }
-
+    
     @Published var state: State = .loading
-
+    
     private let repositoriesService: RepositoriesService
     
     init(repositoriesService: RepositoriesService) {
         self.repositoriesService = repositoriesService
     }
-
+    
     func searchRepositories(for user: String) {
         state = .loading
         Task {
@@ -42,7 +42,7 @@ final class RepositoryListViewModel {
             }
         }
     }
-
+    
     private func state(for error: Error) -> State {
         let errorMessage: String = {
             switch error {

@@ -8,9 +8,9 @@
 import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
-
+    
     static let reuseIdentifierKey = "RepositoryTableViewCell"
-
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -21,7 +21,7 @@ class RepositoryTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -30,7 +30,7 @@ class RepositoryTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.background
@@ -39,36 +39,36 @@ class RepositoryTableViewCell: UITableViewCell {
         view.layer.masksToBounds = true;
         return view
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         nameLabel.text = ""
         descriptionLabel.text = ""
     }
-
+    
     private func setup() {
         contentView.addSubview(containerView)
         containerView.addSubview(nameLabel)
         containerView.addSubview(descriptionLabel)
-
-
+        
+        
         containerView.pin(to: contentView, edgeInset: .init(top: 16, left: 20, bottom: 0, right: 20))
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             nameLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -8),
-
+            
             descriptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
             descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)
