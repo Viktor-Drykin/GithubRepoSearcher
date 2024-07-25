@@ -12,18 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let apiClient = APIClient()
-//        let repoService = RepositoriesServiceImpl(apiService: apiClient)
-//        Task {
-//            do {
-//                let repos = try await repoService.fetchRepos(with: "Apple")
-//                print(repos)
-//            } catch {
-//                print(error)
-//            }
-//        }
-        //return true
-
         return true
     }
 

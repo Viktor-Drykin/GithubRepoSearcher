@@ -10,10 +10,19 @@ import Combine
 import SafariServices
 
 class ReposViewController: UIViewController {
+    
+    enum Constant {
+        static let userName = "Apple"
+    }
 
     var viewModel: RepositoryListViewModel?
     var cancellables = Set<AnyCancellable>()
     var repositories = [Repository]()
+
+    private lazy var navigationTitle: NavigationNameView = {
+        let view = NavigationNameView()
+        return view
+    }()
 
     private lazy var tableView = {
         let tableView = UITableView()
@@ -39,7 +48,7 @@ class ReposViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel?.searchRepositories()
+        viewModel?.searchRepositories(for: Constant.userName)
 
     }
 
@@ -47,7 +56,6 @@ class ReposViewController: UIViewController {
         viewModel?.$state
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] state in
-                print(state)
                 self?.configure(with: state)
             })
             .store(in: &cancellables)
@@ -79,7 +87,8 @@ class ReposViewController: UIViewController {
     }
 
     private func setupUI() {
-        navigationItem.titleView = UILabel()
+        navigationTitle.set(title: Constant.userName)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navigationTitle)
         tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: RepositoryTableViewCell.reuseIdentifierKey)
         tableView.delegate = self
         tableView.dataSource = self

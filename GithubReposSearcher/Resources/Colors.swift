@@ -8,7 +8,7 @@
 import UIKit
 
 enum Colors {
-    static let navigationBarHeader = UIColor(rgb: 0x06375A)
+    static let navigationBarTitle = UIColor(rgb: 0x06375A)
     static let sectionHeader = UIColor(rgb: 0x006AB7)
     static let title = UIColor(rgb: 0x006AB7)
     static let subtitle = UIColor(rgb: 0x00487C)

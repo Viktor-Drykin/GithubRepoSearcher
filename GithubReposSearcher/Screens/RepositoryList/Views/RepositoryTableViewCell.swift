@@ -11,8 +11,9 @@ class RepositoryTableViewCell: UITableViewCell {
 
     static let reuseIdentifierKey = "RepositoryTableViewCell"
 
-    private lazy var nameLabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         label.textColor = Colors.title
@@ -21,15 +22,16 @@ class RepositoryTableViewCell: UITableViewCell {
         return label
     }()
 
-    private lazy var descriptionLabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = Colors.subtitle
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private lazy var containerView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.background
         view.translatesAutoresizingMaskIntoConstraints = false

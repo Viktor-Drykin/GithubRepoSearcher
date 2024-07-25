@@ -12,6 +12,7 @@ enum RepositoryServiceError: Error {
     case incorrectURL
     case invalidStatusCode
     case failedToDecode
+    case empty
 }
 
 class RepositoriesServiceImpl {
@@ -41,6 +42,9 @@ extension RepositoriesServiceImpl: RepositoriesService {
         let request = URLRequest(url: url)
         do {
             let repositories: [RepositoryDTO] = try await apiService.perform(urlRequest: request)
+            guard !repositories.isEmpty else {
+                throw RepositoryServiceError.empty
+            }
             return repositories
         } catch NetworkError.failedToDecode {
             throw RepositoryServiceError.failedToDecode

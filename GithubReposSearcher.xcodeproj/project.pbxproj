@@ -28,6 +28,7 @@
 		C0439A7E2C525264006DE1B7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A7D2C525264006DE1B7 /* Repository.swift */; };
 		C0439A812C52AE3A006DE1B7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A802C52AE3A006DE1B7 /* Colors.swift */; };
 		C054056B2C52BE050047D261 /* RepositoriesHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */; };
+		C054056D2C52C9D80047D261 /* NavigationNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C054056C2C52C9D80047D261 /* NavigationNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C0439A7D2C525264006DE1B7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C0439A802C52AE3A006DE1B7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesHeaderTableView.swift; sourceTree = "<group>"; };
+		C054056C2C52C9D80047D261 /* NavigationNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		C0439A772C52515A006DE1B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C054056C2C52C9D80047D261 /* NavigationNameView.swift */,
 				C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */,
 				C0439A782C525173006DE1B7 /* RepositoryTableViewCell.swift */,
 				C0439A272C5147BD006DE1B7 /* ReposViewController.swift */,
@@ -384,6 +387,7 @@
 				C054056B2C52BE050047D261 /* RepositoriesHeaderTableView.swift in Sources */,
 				C0439A732C524671006DE1B7 /* ReposViewModel.swift in Sources */,
 				C0439A812C52AE3A006DE1B7 /* Colors.swift in Sources */,
+				C054056D2C52C9D80047D261 /* NavigationNameView.swift in Sources */,
 				C0439A662C515766006DE1B7 /* RepositoriesServiceImpl.swift in Sources */,
 				C0439A672C515766006DE1B7 /* RepositoriesService.swift in Sources */,
 				C0439A6F2C523E3B006DE1B7 /* Router.swift in Sources */,
