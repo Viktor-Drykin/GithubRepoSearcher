@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  Launcher.swift
 //  GithubReposSearcher
 //
 //  Created by Viktor Drykin on 25.07.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Router {
+class Launcher {
     
     let window: UIWindow?
     private let navigationController : UINavigationController?
@@ -18,7 +18,7 @@ class Router {
     }
 
     func start() {
-        let viewController = ReposViewController()
+        let viewController = RepositoryListViewController()
         let apiService = APIClient()
         let repositoriesService = RepositoriesServiceImpl(apiService: apiService)
         let viewModel = RepositoryListViewModel(repositoriesService: repositoriesService)

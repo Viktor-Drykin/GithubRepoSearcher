@@ -1,5 +1,5 @@
 //
-//  ReposViewController.swift
+//  RepositoryListViewController.swift
 //  GithubReposSearcher
 //
 //  Created by Viktor Drykin on 24.07.2024.
@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SafariServices
 
-class ReposViewController: UIViewController {
+class RepositoryListViewController: UIViewController {
     
     enum Constant {
         static let userName = "Apple"
@@ -117,7 +117,7 @@ class ReposViewController: UIViewController {
     }
 }
 
-extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
+extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
