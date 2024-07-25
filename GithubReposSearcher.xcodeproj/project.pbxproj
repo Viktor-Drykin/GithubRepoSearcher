@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C0439A242C5147BD006DE1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A232C5147BD006DE1B7 /* AppDelegate.swift */; };
 		C0439A262C5147BD006DE1B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A252C5147BD006DE1B7 /* SceneDelegate.swift */; };
-		C0439A282C5147BD006DE1B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A272C5147BD006DE1B7 /* ViewController.swift */; };
+		C0439A282C5147BD006DE1B7 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A272C5147BD006DE1B7 /* ReposViewController.swift */; };
 		C0439A2D2C5147C0006DE1B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0439A2C2C5147C0006DE1B7 /* Assets.xcassets */; };
 		C0439A302C5147C0006DE1B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0439A2E2C5147C0006DE1B7 /* LaunchScreen.storyboard */; };
 		C0439A3B2C5147C0006DE1B7 /* GithubReposSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A3A2C5147C0006DE1B7 /* GithubReposSearcherTests.swift */; };
@@ -22,6 +22,12 @@
 		C0439A662C515766006DE1B7 /* RepositoriesServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A612C515766006DE1B7 /* RepositoriesServiceImpl.swift */; };
 		C0439A672C515766006DE1B7 /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A622C515766006DE1B7 /* RepositoriesService.swift */; };
 		C0439A6F2C523E3B006DE1B7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A6E2C523E3B006DE1B7 /* Router.swift */; };
+		C0439A732C524671006DE1B7 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A722C524671006DE1B7 /* ReposViewModel.swift */; };
+		C0439A762C524D09006DE1B7 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A752C524D09006DE1B7 /* UIView+Layout.swift */; };
+		C0439A792C525173006DE1B7 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A782C525173006DE1B7 /* RepositoryTableViewCell.swift */; };
+		C0439A7E2C525264006DE1B7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A7D2C525264006DE1B7 /* Repository.swift */; };
+		C0439A812C52AE3A006DE1B7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0439A802C52AE3A006DE1B7 /* Colors.swift */; };
+		C054056B2C52BE050047D261 /* RepositoriesHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +51,7 @@
 		C0439A202C5147BD006DE1B7 /* GithubReposSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubReposSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0439A232C5147BD006DE1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0439A252C5147BD006DE1B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0439A272C5147BD006DE1B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0439A272C5147BD006DE1B7 /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
 		C0439A2C2C5147C0006DE1B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0439A2F2C5147C0006DE1B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0439A312C5147C0006DE1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +67,12 @@
 		C0439A612C515766006DE1B7 /* RepositoriesServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesServiceImpl.swift; sourceTree = "<group>"; };
 		C0439A622C515766006DE1B7 /* RepositoriesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
 		C0439A6E2C523E3B006DE1B7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C0439A722C524671006DE1B7 /* ReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		C0439A752C524D09006DE1B7 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		C0439A782C525173006DE1B7 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		C0439A7D2C525264006DE1B7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C0439A802C52AE3A006DE1B7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesHeaderTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,8 @@
 		C0439A222C5147BD006DE1B7 /* GithubReposSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				C0439A7F2C52AE2A006DE1B7 /* Resources */,
+				C0439A742C524CFB006DE1B7 /* Extensions */,
 				C0439A702C52444B006DE1B7 /* Screens */,
 				C0439A6D2C523E2E006DE1B7 /* Router */,
 				C0439A532C515280006DE1B7 /* Services */,
@@ -180,9 +194,61 @@
 		C0439A702C52444B006DE1B7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C0439A272C5147BD006DE1B7 /* ViewController.swift */,
+				C0439A7A2C525219006DE1B7 /* RepositoryList */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		C0439A712C524650006DE1B7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0439A722C524671006DE1B7 /* ReposViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0439A742C524CFB006DE1B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C0439A752C524D09006DE1B7 /* UIView+Layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C0439A772C52515A006DE1B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C054056A2C52BE050047D261 /* RepositoriesHeaderTableView.swift */,
+				C0439A782C525173006DE1B7 /* RepositoryTableViewCell.swift */,
+				C0439A272C5147BD006DE1B7 /* ReposViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0439A7A2C525219006DE1B7 /* RepositoryList */ = {
+			isa = PBXGroup;
+			children = (
+				C0439A7C2C525255006DE1B7 /* Model */,
+				C0439A712C524650006DE1B7 /* ViewModel */,
+				C0439A772C52515A006DE1B7 /* Views */,
+			);
+			path = RepositoryList;
+			sourceTree = "<group>";
+		};
+		C0439A7C2C525255006DE1B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0439A7D2C525264006DE1B7 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0439A7F2C52AE2A006DE1B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0439A802C52AE3A006DE1B7 /* Colors.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,13 +381,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C054056B2C52BE050047D261 /* RepositoriesHeaderTableView.swift in Sources */,
+				C0439A732C524671006DE1B7 /* ReposViewModel.swift in Sources */,
+				C0439A812C52AE3A006DE1B7 /* Colors.swift in Sources */,
 				C0439A662C515766006DE1B7 /* RepositoriesServiceImpl.swift in Sources */,
 				C0439A672C515766006DE1B7 /* RepositoriesService.swift in Sources */,
 				C0439A6F2C523E3B006DE1B7 /* Router.swift in Sources */,
 				C0439A5A2C5152C0006DE1B7 /* APIServicePerformable.swift in Sources */,
-				C0439A282C5147BD006DE1B7 /* ViewController.swift in Sources */,
+				C0439A792C525173006DE1B7 /* RepositoryTableViewCell.swift in Sources */,
+				C0439A282C5147BD006DE1B7 /* ReposViewController.swift in Sources */,
+				C0439A7E2C525264006DE1B7 /* Repository.swift in Sources */,
 				C0439A242C5147BD006DE1B7 /* AppDelegate.swift in Sources */,
 				C0439A262C5147BD006DE1B7 /* SceneDelegate.swift in Sources */,
+				C0439A762C524D09006DE1B7 /* UIView+Layout.swift in Sources */,
 				C0439A5E2C5152C0006DE1B7 /* APIClient.swift in Sources */,
 				C0439A5B2C5152C0006DE1B7 /* NetworkError.swift in Sources */,
 				C0439A642C515766006DE1B7 /* RepositoriesDTO.swift in Sources */,

@@ -10,6 +10,8 @@ import Foundation
 enum RepositoryServiceError: Error {
     case incorrectUserName
     case incorrectURL
+    case invalidStatusCode
+    case failedToDecode
 }
 
 class RepositoriesServiceImpl {
@@ -37,8 +39,13 @@ extension RepositoriesServiceImpl: RepositoriesService {
         }
 
         let request = URLRequest(url: url)
-        let repositories: [RepositoryDTO] = try await apiService.perform(urlRequest: request)
-        
-        return repositories
+        do {
+            let repositories: [RepositoryDTO] = try await apiService.perform(urlRequest: request)
+            return repositories
+        } catch NetworkError.failedToDecode {
+            throw RepositoryServiceError.failedToDecode
+        } catch NetworkError.invalidStatusCode {
+            throw RepositoryServiceError.invalidStatusCode
+        }
     }
 }

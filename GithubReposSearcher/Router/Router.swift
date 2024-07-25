@@ -18,14 +18,13 @@ class Router {
     }
 
     func start() {
-        let viewController = ViewController()
+        let viewController = ReposViewController()
+        let apiService = APIClient()
+        let repositoriesService = RepositoriesServiceImpl(apiService: apiService)
+        let viewModel = RepositoryListViewModel(repositoriesService: repositoriesService)
+        viewController.viewModel = viewModel
         navigationController?.viewControllers = [viewController]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-    }
-
-    func runUserInputScreen() {
-        let viewController = ViewController()
-        navigationController?.viewControllers = [viewController]
     }
 }
