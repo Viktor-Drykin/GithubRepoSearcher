@@ -39,7 +39,20 @@ class RepositoryTableViewCell: UITableViewCell {
         view.layer.masksToBounds = true;
         return view
     }()
-    
+
+    private lazy var containerStackViewView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 8
+        view.axis = .vertical
+        //view.backgroundColor = Colors.background
+        view.translatesAutoresizingMaskIntoConstraints = false
+        //view.layer.cornerRadius = 10;
+        //view.layer.masksToBounds = true;
+        return view
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -58,25 +71,17 @@ class RepositoryTableViewCell: UITableViewCell {
     
     private func setup() {
         contentView.addSubview(containerView)
-        containerView.addSubview(nameLabel)
-        containerView.addSubview(descriptionLabel)
-        
+        containerView.addSubview(containerStackViewView)
+        containerStackViewView.addArrangedSubview(nameLabel)
+        containerStackViewView.addArrangedSubview(descriptionLabel)
         
         containerView.pin(to: contentView, edgeInset: .init(top: 16, left: 20, bottom: 0, right: 20))
-        NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
-            nameLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -8),
-            
-            descriptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)
-        ])
+        containerStackViewView.pin(to: containerView, edgeInset: .init(top: 16, left: 16, bottom: 16, right: 16))
     }
     
     func set(title: String, description: String?) {
         nameLabel.text = title
-        descriptionLabel.text = description ?? "Description is absent"
+        descriptionLabel.text = description
+        descriptionLabel.isHidden = description == nil ? true : false
     }
 }
